@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../styles/App.css';
 
 import axios from 'axios';
 
@@ -8,13 +8,15 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+
   componentWillMount() {
     // Here is a link to the API Documentation: https://dev.socrata.com/
-    axios.get('https://data.austintexas.gov/resource/h8x4-nvyi.json')
-      .then((res) => {
+    axios
+      .get('https://data.austintexas.gov/resource/h8x4-nvyi.json')
+      .then(res => {
         console.log(res);
         // TODO: Decided how to store the response data.
-      })
+      });
   }
 
   render() {
