@@ -9,14 +9,13 @@ class App extends Component {
     this.state = {};
   }
 
-  componentWillMount() {
+  async componentWillMount() {
     // Here is a link to the API Documentation: https://dev.socrata.com/
-    axios
-      .get('https://data.austintexas.gov/resource/h8x4-nvyi.json')
-      .then(res => {
-        console.log(res);
-        // TODO: Decided how to store the response data.
-      });
+    const data = await axios.get(
+      'https://data.austintexas.gov/resource/h8x4-nvyi.json'
+    );
+
+    console.log(data);
   }
 
   render() {
