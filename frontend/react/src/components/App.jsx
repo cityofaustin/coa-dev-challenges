@@ -6,16 +6,25 @@ import axios from 'axios';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+
+    this.state = {
+      dogData: []
+    };
   }
 
   async componentWillMount() {
     // Here is a link to the API Documentation: https://dev.socrata.com/
-    const data = await axios.get(
-      'https://data.austintexas.gov/resource/h8x4-nvyi.json'
-    );
+    try {
+      const response = await axios.get(
+        'https://data.austintexas.gov/resource/h8x4-nvyi.json'
+      );
 
-    console.log(data);
+      this.setState({
+        dogData: response.data
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   render() {
