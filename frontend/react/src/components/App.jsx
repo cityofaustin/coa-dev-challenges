@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import 'typeface-roboto';
-
 import axios from 'axios';
+import DataTable from './DataTable';
 
 class App extends Component {
   constructor(props) {
@@ -29,17 +29,15 @@ class App extends Component {
   }
 
   render() {
+    const { dogData } = this.state;
+
     return (
       <div className="App">
         <div className="App-header">
           <h2>Dangerous Dogs</h2>
         </div>
 
-        <p className="App-intro">
-          {/* TODO: Delete line below */}
-          Open Dev Tools Console to see data.
-          {/* TODO: Display data here, maybe? Be creative! 🎉 */}
-        </p>
+        <DataTable dogData={dogData} />
       </div>
     );
   }
