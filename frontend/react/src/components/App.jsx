@@ -3,6 +3,7 @@ import '../styles/App.css';
 import 'typeface-roboto';
 import axios from 'axios';
 import DataTable from './DataTable';
+import DataMap from './DataMap';
 
 class App extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class App extends Component {
         </div>
 
         <DataTable dogData={dogData} />
+        <DataMap dogData={dogData} />
       </div>
     );
   }
