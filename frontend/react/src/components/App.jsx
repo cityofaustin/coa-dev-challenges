@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import 'typeface-roboto';
 import axios from 'axios';
+import Typography from '@material-ui/core/Typography';
 import DataTable from './DataTable';
 import DataMap from './DataMap';
 
@@ -34,12 +35,20 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Dangerous Dogs</h2>
+        <div className="headContainer">
+          <Typography className="headText" variant="h2">
+            Dangerous Dogs
+          </Typography>
         </div>
-
-        <DataTable dogData={dogData} />
-        <DataMap dogData={dogData} />
+        <div className="contentContainer">
+          <DataTable dogData={dogData} />
+          <DataMap dogData={dogData} />
+        </div>
+        <div className="footerContainer">
+          <Typography className="footerText" variant="h2">
+            Footer (WIP)
+          </Typography>
+        </div>
       </div>
     );
   }
