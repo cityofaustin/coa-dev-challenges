@@ -12,10 +12,6 @@ This was my first time working with React Hooks to manage state. I ended up real
 liking them! Though not demonstrated in this project, I am familiar with the older
 syntaxes for managing component states.
 
-The whole site is responsive. However, there is some contained overflow with the table on very small screens (mobile).
-This was mostly a time tradeoff for me. Given more time I would design a seperate layout when viewing that data
-on mobile. It's responsive in its current state, but the user experience is sub-par.
-
 I'm aware it is bad practice to use array indexes as react keys when mapping through data.
 I did this only to save a little time, as to not generate a unique ID for each record.
 Given there is no array manipulation necessary in the project, this should not cause problems.
