@@ -45,35 +45,35 @@ const Statistics = props => {
 
     return (
       <Fragment>
-        <Grid item xs={6} md={3}>
-          <Card>
+        <Grid item xs={12} sm={6} md={3}>
+          <Card className="statCard">
             <CardContent>
-              <p>Total Records</p>
-              <p>{stats.totalRecords}</p>
+              <div className="statTitle">Total Records</div>
+              <div className="statNumber">{stats.totalRecords}</div>
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={6} md={3}>
-          <Card>
+        <Grid item xs={12} sm={6} md={3}>
+          <Card className="statCard">
             <CardContent>
-              <p>Most Dangerous Zip</p>
-              <p>{stats.mostDangerousZip}</p>
+              <div className="statTitle">Male Dogs</div>
+              <div className="statNumber">{stats.recordedMale}</div>
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={6} md={3}>
-          <Card>
+        <Grid item xs={12} sm={6} md={3}>
+          <Card className="statCard">
             <CardContent>
-              <p>Male Dogs</p>
-              <p>{stats.recordedMale}</p>
+              <div className="statTitle">Female Dogs</div>
+              <div className="statNumber">{stats.recordedFemale}</div>
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={6} md={3}>
-          <Card>
+        <Grid item xs={12} sm={6} md={3}>
+          <Card className="statCard">
             <CardContent>
-              <p>Female Dogs</p>
-              <p>{stats.recordedFemale}</p>
+              <div className="statTitle">Dangerous Zip</div>
+              <div className="statNumber">{stats.mostDangerousZip}</div>
             </CardContent>
           </Card>
         </Grid>

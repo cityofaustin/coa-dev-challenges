@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
 import 'typeface-roboto';
 import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
+import WhatsHotIcon from '@material-ui/icons/Whatshot';
 import Statistics from './Statistics';
 import DataTable from './DataTable';
 import DataMap from './DataMap';
+import '../styles/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class App extends Component {
       <div className="App">
         <div className="headContainer">
           <Typography className="headText" variant="h2">
-            Dangerous Dogs
+            Austin&apos;s Dangerous Dogs
           </Typography>
         </div>
         <div className="contentContainer">
@@ -47,9 +48,10 @@ class App extends Component {
           <DataTable dogData={dogData} />
         </div>
         <div className="footerContainer">
-          <Typography className="footerText" variant="h2">
-            Footer (WIP)
-          </Typography>
+          <div>
+            <WhatsHotIcon className="footerIcon" />
+            <p className="footerText">Made By Tanner</p>
+          </div>
         </div>
       </div>
     );

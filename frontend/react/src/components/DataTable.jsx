@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -34,7 +34,7 @@ const DataTable = props => {
   };
 
   const generateTable = () => (
-    <Paper className="paper">
+    <Paper className="table">
       <Table>
         <TableHead>
           <TableRow>
@@ -87,7 +87,7 @@ const DataTable = props => {
   );
 
   const generateMobileTable = () => (
-    <Fragment>
+    <div className="table">
       {dogData
         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
         .map((row, i) => (
@@ -120,22 +120,24 @@ const DataTable = props => {
             </ExpansionPanelDetails>
           </ExpansionPanel>
         ))}
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={dogData.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        backIconButtonProps={{
-          'aria-label': 'Previous Page'
-        }}
-        nextIconButtonProps={{
-          'aria-label': 'Next Page'
-        }}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      />
-    </Fragment>
+      <Paper>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={dogData.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          backIconButtonProps={{
+            'aria-label': 'Previous Page'
+          }}
+          nextIconButtonProps={{
+            'aria-label': 'Next Page'
+          }}
+          onChangePage={handleChangePage}
+          onChangeRowsPerPage={handleChangeRowsPerPage}
+        />
+      </Paper>
+    </div>
   );
 
   return (

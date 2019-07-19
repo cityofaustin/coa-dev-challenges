@@ -1,5 +1,24 @@
 .statsContainer {
   padding-top: 50px;
   margin: auto;
+  width: 90%;
   max-width: 1200px;
+}
+
+.statCard {
+  text-align: center;
+  background-color: #1D2228 !important;
+  border-radius: 20px !important;
+}
+
+.statTitle {
+  color: #E1E2E2;
+  margin: 0px;
+  font-size: 20px;
+}
+
+.statNumber {
+  color: #FB8122;
+  font-size: 50px;
+  padding-top: 20px;
 }

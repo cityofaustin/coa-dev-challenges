@@ -44,7 +44,7 @@ const DataMap = props => {
 
     return (
       <GoogleMap
-        defaultZoom={10}
+        defaultZoom={12}
         defaultCenter={{ lat: 30.267153, lng: -97.743057 }}
       >
         {dogData
