@@ -1,10 +1,21 @@
 .tableContainer {
-  margin: auto;
   padding-bottom: 50px;
   width: 100%;
-  max-width: 1200px;
 }
 
 .paper {
   overflow-x: auto;
+  margin: auto;
+  width: 95%;
+  max-width: 1200px;
+}
+
+.expansionDetails {
+  flex-direction: column;
+}
+
+.expansionDesc {
+  text-align: center;
+  margin-top: 15px;
+  color: red;
 }
