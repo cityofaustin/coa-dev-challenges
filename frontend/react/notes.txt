@@ -1,0 +1,46 @@
+Notes with Code Challenge
+-----------------------------
+Code quality linted using ESlint based on AirBnb's style guide, and Prettier's style guide.
+
+Upgraded React and React-Dom packages to latest versions.
+
+Restructured folder structure into Components, Styles, and Tests folders.
+
+All components that accept props are validated using prop-types package.
+
+This was my first time working with React Hooks to manage state. I ended up really
+liking them! Though not demonstrated in this project, I am familiar with the older
+syntaxes for managing component states.
+
+The whole site is responsive. However, there is some contained overflow with the table on very small screens (mobile).
+This was mostly a time tradeoff for me. Given more time I would design a seperate layout when viewing that data
+on mobile. It's responsive in its current state, but the user experience is sub-par.
+
+I'm aware it is bad practice to use array indexes as react keys when mapping through data.
+I did this only to save a little time, as to not generate a unique ID for each record.
+Given there is no array manipulation necessary in the project, this should not cause problems.
+
+A few of the records in the dataset are missing the 'location' property that contain the coordinates.
+I used this data to map the points on the google map, so records without this property will not be pinned
+on the map.
+
+My google maps api key is posted in plain text. It's usually better to store API keys in an environment variable,
+but I figured it was safe enough for this project.
+
+
+Preferences Notes
+----------------------------
+I generally prefer async/await syntax to promise chains. Changed the api call to use async/await.
+
+There are multiple ways to go about styling with Material-UI. Their preferred method is to use css-in-js.
+I went with vanilla css for this project, as I didn't need any of the features given with css-in-js.
+
+
+Bugs
+-----------------------------
+Fixed small console error involving the size of the favicon.
+
+I'm using a free api key for the google maps functionality. You may get a warning saying
+"This page can't load google maps correctly". This is just because I'm limited to 1 map request
+per day (seriously 1 api call google? hahaha). Just exit the warning and the map should function
+as intended, but will have a darker tint on top.
