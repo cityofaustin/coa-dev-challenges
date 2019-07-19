@@ -26,56 +26,58 @@ const DataTable = props => {
   };
 
   return (
-    <Paper className="paper">
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>First Name</TableCell>
-            <TableCell>Last Name</TableCell>
-            <TableCell>Address</TableCell>
-            <TableCell>Dog Description</TableCell>
-            <TableCell>State</TableCell>
-            <TableCell>Zip</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {/*
-            It is bad practice to use array indexes as react keys. I'm doing it here just
-            for simplicity, so I don't have to generate a unique ID for each record. Since
-            no array manipulation is necessary, this should not cause any issues.
-          */}
-          {dogData
-            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            .map((row, i) => (
-              <TableRow key={i}>
-                <TableCell component="th" scope="row">
-                  {row.first_name}
-                </TableCell>
-                <TableCell>{row.last_name}</TableCell>
-                <TableCell>{row.address}</TableCell>
-                <TableCell>{row.description_of_dog}</TableCell>
-                <TableCell>{row.location_state}</TableCell>
-                <TableCell>{row.zip_code}</TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
-      </Table>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={dogData.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        backIconButtonProps={{
-          'aria-label': 'Previous Page'
-        }}
-        nextIconButtonProps={{
-          'aria-label': 'Next Page'
-        }}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      />
-    </Paper>
+    <div className="tableContainer">
+      <Paper className="paper">
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>First Name</TableCell>
+              <TableCell>Last Name</TableCell>
+              <TableCell>Address</TableCell>
+              <TableCell>Dog Description</TableCell>
+              <TableCell>State</TableCell>
+              <TableCell>Zip</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {/*
+                It is bad practice to use array indexes as react keys. I'm doing it here just
+                for simplicity, so I don't have to generate a unique ID for each record. Since
+                no array manipulation is necessary, this should not cause any issues.
+              */}
+            {dogData
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((row, i) => (
+                <TableRow key={i}>
+                  <TableCell component="th" scope="row">
+                    {row.first_name}
+                  </TableCell>
+                  <TableCell>{row.last_name}</TableCell>
+                  <TableCell>{row.address}</TableCell>
+                  <TableCell>{row.description_of_dog}</TableCell>
+                  <TableCell>{row.location_state}</TableCell>
+                  <TableCell>{row.zip_code}</TableCell>
+                </TableRow>
+              ))}
+          </TableBody>
+        </Table>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={dogData.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          backIconButtonProps={{
+            'aria-label': 'Previous Page'
+          }}
+          nextIconButtonProps={{
+            'aria-label': 'Next Page'
+          }}
+          onChangePage={handleChangePage}
+          onChangeRowsPerPage={handleChangeRowsPerPage}
+        />
+      </Paper>
+    </div>
   );
 };
 

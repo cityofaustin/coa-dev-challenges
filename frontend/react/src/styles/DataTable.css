@@ -1,6 +1,10 @@
-.paper {
-  margin: 50px auto 0px;
+.tableContainer {
+  margin: auto;
+  padding-bottom: 50px;
   width: 100%;
   max-width: 1200px;
+}
+
+.paper {
   overflow-x: auto;
 }

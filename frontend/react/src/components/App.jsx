@@ -3,6 +3,7 @@ import '../styles/App.css';
 import 'typeface-roboto';
 import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
+import Statistics from './Statistics';
 import DataTable from './DataTable';
 import DataMap from './DataMap';
 
@@ -41,8 +42,9 @@ class App extends Component {
           </Typography>
         </div>
         <div className="contentContainer">
-          <DataTable dogData={dogData} />
+          <Statistics dogData={dogData} />
           <DataMap dogData={dogData} />
+          <DataTable dogData={dogData} />
         </div>
         <div className="footerContainer">
           <Typography className="footerText" variant="h2">
