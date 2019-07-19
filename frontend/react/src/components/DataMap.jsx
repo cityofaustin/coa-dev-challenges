@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   GoogleMap,
   withScriptjs,
   withGoogleMap,
-  Marker
+  Marker,
+  InfoWindow
 } from 'react-google-maps';
+import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import '../styles/DataMap.css';
 
 const DataMap = props => {
   const { dogData } = props;
 
+  const generateInfoPanel = selectedRecord => (
+    <div className="infoPanel">
+      <Grid container>
+        <Grid item xs={8}>
+          <p>
+            <b>Name:</b>{' '}
+            {`${selectedRecord.first_name} ${selectedRecord.last_name}`}
+          </p>
+        </Grid>
+        <Grid className="zipText" item xs={4}>
+          <p>
+            <b>Zip:</b> {selectedRecord.zip_code}
+          </p>
+        </Grid>
+        <Grid item xs={12}>
+          <p>
+            <b>Address:</b> {selectedRecord.address}
+          </p>
+        </Grid>
+        <Grid className="descriptionText" item xs={12}>
+          <p>{selectedRecord.description_of_dog}</p>
+        </Grid>
+      </Grid>
+    </div>
+  );
+
   const Map = () => {
+    const [selectedRecord, setSelectedRecord] = useState(null);
+
     return (
       <GoogleMap
         defaultZoom={10}
@@ -26,8 +56,25 @@ const DataMap = props => {
                 lat: dogAtk.location.coordinates[1],
                 lng: dogAtk.location.coordinates[0]
               }}
+              onClick={() => {
+                setSelectedRecord(dogAtk);
+              }}
             />
           ))}
+
+        {selectedRecord && (
+          <InfoWindow
+            position={{
+              lat: selectedRecord.location.coordinates[1],
+              lng: selectedRecord.location.coordinates[0]
+            }}
+            onCloseClick={() => {
+              setSelectedRecord(null);
+            }}
+          >
+            {generateInfoPanel(selectedRecord)}
+          </InfoWindow>
+        )}
       </GoogleMap>
     );
   };
