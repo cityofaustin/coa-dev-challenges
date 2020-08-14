@@ -17,13 +17,22 @@ Your API must provide a way to fetch the following data:
 - List the available routes. You can fetch this data by querying `routes.txt`.
 - List the trips for a specified route. You can fetch this data by querying `trips.txt`.
 - List the stops for a specified trip and direction. You can fetch this data by querying `trips.txt` and `stop_times.txt`.
-
-### Extra credit
-
-This data is more difficult to query, but if you're enjoying this challenge try one of these:
-
 - List the routes that stop near a location. Specify the location using `latitude` and `longitude`. You can fetch this data by querying `stops.txt`, `stop_times.txt`, and `trips.txt`.
 - List the next five trips arriving at a particular stop. Specify the `stop_id` and `time`. You can fetch this data by querying `stops.txt`, `stop_times.txt`, and `trips.txt`.
+
+## How to share
+
+- Upload your completed challenge to a Private github repo.
+- We'll send you a list of the github members to add as collaborators.
+
+## Some Hints & Guidelines
+
+- You must work on this alone. Do not share the code challenge with others.
+- Build your API using any frameworks, databases, tools, or libraries you like.
+- Write clean code.
+- Bonus points for tests
+  - Your tests don't need to be extensive. Just check the basics. For example, does the routes query return more than 1 route?
+- Bonus points for deploying your API
 
 ## Resources
 
@@ -31,10 +40,3 @@ This data is more difficult to query, but if you're enjoying this challenge try 
 - CapMetro Open Data: https://data.texas.gov/capital-metro
 - awesome-transit: https://github.com/CUTR-at-USF/awesome-transit
 - Us. If you are stuck, or need guidance, leave a comment to a line of code in Github or email us.
-
-## Some Hints & Guidelines
-
-- Build your API using any frameworks, tools, databases, or libraries you like.
-- Write clean code. Bonus points for tests.
-  - Your tests don't need to be extensive. Just check the basics. For example, does the routes query return more than 1 route?
-- You must work on this alone. Do not share the code challenge with others.
