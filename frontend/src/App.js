@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './App.scss';
-
 import axios from 'axios';
+
+import './App.scss';
+import PoolMap from './PoolMap';
+
 
 const App = () => {
   const [poolData, setPoolData] = useState({});
@@ -13,7 +15,7 @@ const App = () => {
       console.log(data)
     }
     fetchData()
-  }, [])
+  }, []);
 
   return (
     <div className="App">
@@ -26,8 +28,9 @@ const App = () => {
         Open Dev Tools Console to see data.
         {/* TODO: Display data here, maybe? Be creative! 🎉 */}
       </p>
+      <PoolMap/>
     </div>
-  )
+  );
 }
 
 export default App;
