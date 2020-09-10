@@ -1,5 +1,14 @@
-// This class is used in leaflet Map component
+.PoolMap-container {
+    // position: fixed;
+    // height: 90%;
+    width: 100%;
+}
+
+// This class is used within leaflet Map component
 .leaflet-container {
-  height: 400px;
-  width: 100%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 90%;
+    width: 100%;
 }

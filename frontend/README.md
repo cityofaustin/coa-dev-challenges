@@ -13,8 +13,8 @@ Your task is to create a webpage that displays the schedule for pools and splash
 ### Resources
 
 - Endpoint to data: https://data.austintexas.gov/Recreation-and-Culture/Austin-Pool-Schedule/xaxa-886r
-- SODA Developers Documentation: http://dev.socrata.com/
 - React Hooks: https://reactjs.org/docs/hooks-intro.html
+- Leaflet: https://react-leaflet.js.org/docs/en/examples
 - Us. If you are stuck, or need guidance, leave a comment to a line of code in Github or email us.
 
 ### Some Hints & Guidelines

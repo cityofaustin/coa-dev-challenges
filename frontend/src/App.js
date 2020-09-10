@@ -20,15 +20,19 @@ const App = () => {
   return (
     <div className="App">
       <div className="App-header">
-        <h2>Austin Pools</h2>
+        <h1>Austin Pools</h1>
       </div>
-
-      <p className="App-intro">
-        {/* TODO: Delete line below */}
-        Open Dev Tools Console to see data.
-        {/* TODO: Display data here, maybe? Be creative! 🎉 */}
-      </p>
-      <PoolMap/>
+      <div className="App-content">
+        <p className="App-intro">
+          {/* TODO: Delete line below */}
+          Open Dev Tools Console to see data.
+          {/* TODO: Display data here, maybe? Be creative! 🎉 */}
+        </p>
+        <PoolMap/>
+      </div>
+      <div className="App-footer">
+        Template made by the <a href="https://odd.austintexas.io/" target="_blank">Office of Design and Delivery</a>
+      </div>
     </div>
   );
 }
