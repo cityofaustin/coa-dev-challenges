@@ -12,8 +12,7 @@ const App = () => {
   useEffect(() => {
     async function fetchData() {
       const data = await axios.get('https://data.austintexas.gov/resource/xaxa-886r.json')
-      setPoolData(data)
-      console.log(data)
+      console.log(JSON.stringify(data.data,null,2))
     }
     fetchData()
   }, []);
