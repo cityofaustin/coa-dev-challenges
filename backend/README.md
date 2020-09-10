@@ -16,9 +16,11 @@ Your API must provide a way to fetch the following data:
 
 - List the available routes. You can fetch this data by querying `routes.txt`.
 - List the trips for a specified route. You can fetch this data by querying `trips.txt`.
+- List the next five trips arriving at a particular stop. Specify the `stop_id` and `time`. You can fetch this data by querying `stops.txt`, `stop_times.txt`, and `trips.txt`.
+
+## Extra Credit
 - List the stops for a specified trip and direction. You can fetch this data by querying `trips.txt` and `stop_times.txt`.
 - List the routes that stop near a location. Specify the location using `latitude` and `longitude`. You can fetch this data by querying `stops.txt`, `stop_times.txt`, and `trips.txt`.
-- List the next five trips arriving at a particular stop. Specify the `stop_id` and `time`. You can fetch this data by querying `stops.txt`, `stop_times.txt`, and `trips.txt`.
 
 ## How to share
 
