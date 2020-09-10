@@ -42,6 +42,13 @@ $border-height: 10vh;
     right: 0;
     top: $border-height;
     bottom: $border-height;
+    display: flex;
+    flex-direction: row;
+}
+
+.App-content-column {
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
 .App-intro {

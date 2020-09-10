@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './App.scss';
 import PoolMap from './PoolMap';
+import PoolList from './PoolList';
 
 
 const App = () => {
@@ -23,12 +24,12 @@ const App = () => {
         <h1>Austin Pools</h1>
       </div>
       <div className="App-content">
-        <p className="App-intro">
-          {/* TODO: Delete line below */}
-          Open Dev Tools Console to see data.
-          {/* TODO: Display data here, maybe? Be creative! 🎉 */}
-        </p>
-        <PoolMap/>
+        <div className="App-content-column">
+          <PoolList/>
+        </div>
+        <div className="App-content-column">
+          <PoolMap/>
+        </div>
       </div>
       <div className="App-footer">
         Coding challenge for the <a href="https://odd.austintexas.io/" target="_blank">Office of Design and Delivery</a>
