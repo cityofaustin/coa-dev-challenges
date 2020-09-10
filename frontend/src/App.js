@@ -30,7 +30,7 @@ const App = () => {
         </div>
       </div>
       <div className="App-footer">
-        Coding challenge for the <a href="https://odd.austintexas.io/" target="_blank">Office of Design and Delivery</a>
+        Coding challenge for the <a href="https://odd.austintexas.io/" target="_blank" rel="noopener noreferrer">Office of Design and Delivery</a>
       </div>
     </div>
   );

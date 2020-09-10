@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 
 import './PoolList.scss';
 
-const DeselectPoolButton = () => {
+const PoolSidebar = () => {
   return (
-    <CloseIcon className="DeselectPoolButton" onClick={()=>{}}/>
-  )
+    <div className="PoolSidebar-container">
+      <SelectedPool/>
+      <div className="PoolList-container">
+        <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
+        <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
+        <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
+        {[...new Array(40)].map(()=><PoolListItem name="hi" status="closed"/>)}
+      </div>
+    </div>
+  );
 }
 
-const SelectedPool = () => {
+const SelectedPool = ({name, type, status, url}) => {
   return (
     <div className="SelectedPool-container">
       <div className="SelectedPool-content">
@@ -17,13 +25,13 @@ const SelectedPool = () => {
           [insert pool name here]
         </div>
         <div className="SelectedPool-data">
-          Pool Type: {/**insert pool type here**/}
+          Pool Type: [insert pool type here]
         </div>
         <div className="SelectedPool-data">
-          Status: {/**insert status here**/}
+          Status: [insert status here]
         </div>
         <div className="SelectedPool-data">
-          Website: <a href="insert url here">{/**insert url here**/}</a>
+          Website: <a href="[insert url here]" target="_blank" rel="noopener noreferrer">[insert url here]</a>
         </div>
       </div>
       <DeselectPoolButton/>
@@ -31,29 +39,21 @@ const SelectedPool = () => {
   )
 }
 
-const PoolListItem = () => {
+const DeselectPoolButton = () => (
+  <CloseIcon className="DeselectPoolButton" onClick={()=>{}}/>
+)
+
+const PoolListItem = ({name, status}) => {
   return (
     <div className="PoolListItem">
       <div>
-        [insert pool name here]
+        {name}
       </div>
       <div>
-        [insert status here]
+        {status}
       </div>
     </div>
   )
-}
-
-const PoolSidebar = () => {
-  return (
-    <div className="PoolSidebar-container">
-      <SelectedPool/>
-      <div className="PoolList-container">
-        <PoolListItem/>
-        {[...new Array(40)].map(()=><PoolListItem/>)}
-      </div>
-    </div>
-  );
 }
 
 export default PoolSidebar;
