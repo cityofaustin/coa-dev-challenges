@@ -32,18 +32,28 @@ const SelectedPool = () => {
 }
 
 const PoolListItem = () => {
-  return null
+  return (
+    <div className="PoolListItem">
+      <div>
+        [insert pool name here]
+      </div>
+      <div>
+        [insert status here]
+      </div>
+    </div>
+  )
 }
 
-const PoolList = () => {
-  const [selectedPool, setSelectedPool] = useState({});
-
+const PoolSidebar = () => {
   return (
-    <div className="PoolList-container">
+    <div className="PoolSidebar-container">
       <SelectedPool/>
-      A list
+      <div className="PoolList-container">
+        <PoolListItem/>
+        {[...new Array(40)].map(()=><PoolListItem/>)}
+      </div>
     </div>
   );
 }
 
-export default PoolList;
+export default PoolSidebar;

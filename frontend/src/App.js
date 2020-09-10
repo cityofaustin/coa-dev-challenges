@@ -3,8 +3,7 @@ import axios from 'axios';
 
 import './App.scss';
 import PoolMap from './PoolMap';
-import PoolList from './PoolList';
-
+import PoolSidebar from './PoolSidebar';
 
 const App = () => {
   const [poolData, setPoolData] = useState({});
@@ -12,7 +11,7 @@ const App = () => {
   useEffect(() => {
     async function fetchData() {
       const data = await axios.get('https://data.austintexas.gov/resource/xaxa-886r.json')
-      console.log(JSON.stringify(data.data,null,2))
+      console.log(data)
     }
     fetchData()
   }, []);
@@ -24,7 +23,7 @@ const App = () => {
       </div>
       <div className="App-content">
         <div className="App-content-column">
-          <PoolList/>
+          <PoolSidebar/>
         </div>
         <div className="App-content-column">
           <PoolMap/>
