@@ -8,7 +8,7 @@ const PoolMap = () => {
   const position = [30.2669,-97.741]
   return (
     <div className="PoolMap-container">
-    {/**  <Map center={position} zoom={12}>
+      <Map center={position} zoom={12}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -16,7 +16,7 @@ const PoolMap = () => {
         <Marker position={position}>
           <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
         </Marker>
-      </Map>**/}
+      </Map>
     </div>
   );
 }

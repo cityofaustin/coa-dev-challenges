@@ -31,7 +31,7 @@ const App = () => {
         <PoolMap/>
       </div>
       <div className="App-footer">
-        Template made by the <a href="https://odd.austintexas.io/" target="_blank">Office of Design and Delivery</a>
+        Coding challenge for the <a href="https://odd.austintexas.io/" target="_blank">Office of Design and Delivery</a>
       </div>
     </div>
   );
