@@ -3,53 +3,69 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import './PoolSidebar.scss';
 
-const PoolSidebar = () => {
+const PoolSidebar = ({pools, selectedPool, setSelectedPool}) => {
   return (
     <div className="PoolSidebar-container">
-      <SelectedPool/>
+      {selectedPool && (
+        <SelectedPool
+          pool={selectedPool}
+          setSelectedPool={setSelectedPool}
+        />
+      )}
       <div className="PoolList-container">
-        <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
-        <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
-        <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
+        {pools.map(pool=>(
+          <PoolListItem
+            pool={pool}
+            setSelectedPool={setSelectedPool}
+          />
+        ))}
       </div>
     </div>
   );
 }
 
-const SelectedPool = ({name, type, status, url}) => {
+const SelectedPool = ({pool, setSelectedPool}) => {
   return (
     <div className="SelectedPool-container">
       <div className="SelectedPool-content">
         <div className="SelectedPool-name">
-          [insert pool name here]
+          {pool.pool_name}
         </div>
         <div className="SelectedPool-data">
-          Pool Type: [insert pool type here]
+          {pool.pool_type}
         </div>
         <div className="SelectedPool-data">
-          Status: [insert status here]
+          {pool.status}
         </div>
         <div className="SelectedPool-data">
-          Website: <a href="[insert url here]" target="_blank" rel="noopener noreferrer">[insert url here]</a>
+          Website: <a href={pool.website.url} target="_blank" rel="noopener noreferrer">{pool.website.url}</a>
         </div>
       </div>
-      <DeselectPoolButton/>
+      <DeselectPoolButton
+        setSelectedPool={setSelectedPool}
+      />
     </div>
   )
 }
 
-const DeselectPoolButton = () => (
-  <CloseIcon className="DeselectPoolButton" onClick={()=>{}}/>
+const DeselectPoolButton = ({setSelectedPool}) => (
+  <CloseIcon
+    className="DeselectPoolButton"
+    onClick={()=>setSelectedPool(null)}
+  />
 )
 
-const PoolListItem = ({name, status}) => {
+const PoolListItem = ({pool, setSelectedPool}) => {
   return (
-    <div className="PoolListItem">
+    <div
+      className="PoolListItem"
+      onClick={()=>setSelectedPool(pool)}
+    >
       <div>
-        {name}
+        {pool.pool_name}
       </div>
       <div>
-        {status}
+        {pool.status}
       </div>
     </div>
   )

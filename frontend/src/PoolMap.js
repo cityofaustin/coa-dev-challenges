@@ -3,7 +3,7 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import './PoolMap.scss';
 
-const PoolMap = () => {
+const PoolMap = ({pools, setSelectedPool}) => {
   return (
     <div className="PoolMap-container">
       <Map center={[30.2669,-97.741]} zoom={12}>
@@ -11,18 +11,23 @@ const PoolMap = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
-          <PoolMapMarker position={[30.212930071000073,-97.80184931899998]} name="[insert pool name here]"/>
+          {pools.map((pool)=>(
+            <PoolMapMarker
+              pool={pool}
+              setSelectedPool={setSelectedPool}
+            />
+          ))}
       </Map>
     </div>
   );
 }
 
-const PoolMapMarker = ({position, name}) => (
+const PoolMapMarker = ({pool, setSelectedPool}) => (
   <Marker
-    position={position}
-    onClick={()=>console.log(`You clicked on ${name}`)}
+    position={[pool.location_1.latitude,pool.location_1.longitude]}
+    onClick={()=>setSelectedPool(pool)}
   >
-    <Popup>{name}</Popup>
+    <Popup>{pool.pool_name}</Popup>
   </Marker>
 )
 
