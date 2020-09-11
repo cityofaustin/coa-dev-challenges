@@ -13,8 +13,9 @@ const PoolSidebar = ({pools, selectedPool, setSelectedPool}) => {
         />
       )}
       <div className="PoolList-container">
-        {pools.map(pool=>(
+        {pools.map((pool,i)=>(
           <PoolListItem
+            key={i}
             pool={pool}
             setSelectedPool={setSelectedPool}
           />

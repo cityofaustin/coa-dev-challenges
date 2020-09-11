@@ -19,8 +19,9 @@ const PoolMap = ({pools, selectedPool, setSelectedPool}) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
-          {pools.map((pool)=>(
+          {pools.map((pool, i)=>(
             <PoolMapMarker
+              key={i}
               pool={pool}
               selectedPool={selectedPool}
               setSelectedPool={setSelectedPool}
@@ -35,13 +36,19 @@ const PoolMapMarker = ({pool, selectedPool, setSelectedPool}) => {
   const poolMarkerRef = useRef()
 
   useEffect(()=>{
-    if (selectedPool && (selectedPool == pool)) {
+    if (selectedPool && (selectedPool === pool)) {
       poolMarkerRef.current.leafletElement.openPopup()
     }
     if (!selectedPool) {
       poolMarkerRef.current.leafletElement.closePopup()
     }
-  }, [selectedPool])
+  }, [pool, selectedPool])
+
+  const onPopupClose = () => {
+    if (selectedPool === pool) {
+      setSelectedPool(null)
+    }
+  }
 
   return (
     <Marker
@@ -49,7 +56,7 @@ const PoolMapMarker = ({pool, selectedPool, setSelectedPool}) => {
       position={[pool.location_1.latitude,pool.location_1.longitude]}
       onClick={()=>setSelectedPool(pool)}
     >
-      <Popup>{pool.pool_name}</Popup>
+      <Popup onClose={onPopupClose}>{pool.pool_name}</Popup>
     </Marker>
   )
 }
