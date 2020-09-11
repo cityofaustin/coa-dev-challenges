@@ -36,7 +36,7 @@ To run methods directly on a Leaflet marker component, you'll have to utilize th
 const poolMarkerRef = useRef()
 useEffect((...) => {
   if (...) {
-    poolMarkerRef.leafletElement.openPopup()
+    poolMarkerRef.current.leafletElement.openPopup()
   }
 }, [...])
 ```

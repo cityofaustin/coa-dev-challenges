@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import './PoolMap.scss';
@@ -22,6 +22,7 @@ const PoolMap = ({pools, selectedPool, setSelectedPool}) => {
           {pools.map((pool)=>(
             <PoolMapMarker
               pool={pool}
+              selectedPool={selectedPool}
               setSelectedPool={setSelectedPool}
             />
           ))}
@@ -30,13 +31,27 @@ const PoolMap = ({pools, selectedPool, setSelectedPool}) => {
   );
 }
 
-const PoolMapMarker = ({pool, setSelectedPool}) => (
-  <Marker
-    position={[pool.location_1.latitude,pool.location_1.longitude]}
-    onClick={()=>setSelectedPool(pool)}
-  >
-    <Popup>{pool.pool_name}</Popup>
-  </Marker>
-)
+const PoolMapMarker = ({pool, selectedPool, setSelectedPool}) => {
+  const poolMarkerRef = useRef()
+
+  useEffect(()=>{
+    if (selectedPool && (selectedPool == pool)) {
+      poolMarkerRef.current.leafletElement.openPopup()
+    }
+    if (!selectedPool) {
+      poolMarkerRef.current.leafletElement.closePopup()
+    }
+  }, [selectedPool])
+
+  return (
+    <Marker
+      ref={poolMarkerRef}
+      position={[pool.location_1.latitude,pool.location_1.longitude]}
+      onClick={()=>setSelectedPool(pool)}
+    >
+      <Popup>{pool.pool_name}</Popup>
+    </Marker>
+  )
+}
 
 export default PoolMap;
