@@ -10,5 +10,5 @@
     top: 0;
     bottom: 0;
     height: 100%;
-    width: 100%;
+    width: 50vw; // if you use width: 100%, leaflet won't calculate the initial center correctly
 }

@@ -3,22 +3,27 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import './PoolMap.scss';
 
-
 const PoolMap = () => {
-  const position = [30.2669,-97.741]
   return (
     <div className="PoolMap-container">
-      <Map center={position} zoom={12}>
+      <Map center={[30.2669,-97.741]} zoom={12}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
-        <Marker position={position}>
-          <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
-        </Marker>
+          <PoolMapMarker position={[30.212930071000073,-97.80184931899998]} name="[insert pool name here]"/>
       </Map>
     </div>
   );
 }
+
+const PoolMapMarker = ({position, name}) => (
+  <Marker
+    position={position}
+    onClick={()=>console.log(`You clicked on ${name}`)}
+  >
+    <Popup>{name}</Popup>
+  </Marker>
+)
 
 export default PoolMap;

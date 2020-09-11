@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 
 import './App.scss';
@@ -6,8 +6,7 @@ import PoolMap from './PoolMap';
 import PoolSidebar from './PoolSidebar';
 
 const App = () => {
-  const [poolData, setPoolData] = useState({});
-
+  // Fetch initial site data
   useEffect(() => {
     async function fetchData() {
       const data = await axios.get('https://data.austintexas.gov/resource/xaxa-886r.json')
