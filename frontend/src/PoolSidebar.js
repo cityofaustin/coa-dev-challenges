@@ -1,7 +1,7 @@
 import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 
-import './PoolList.scss';
+import './PoolSidebar.scss';
 
 const PoolSidebar = () => {
   return (
@@ -11,7 +11,6 @@ const PoolSidebar = () => {
         <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
         <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
         <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
-        {[...new Array(40)].map(()=><PoolListItem name="hi" status="closed"/>)}
       </div>
     </div>
   );
