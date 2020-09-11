@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import './PoolMap.scss';
 
-const PoolMap = ({pools, setSelectedPool}) => {
+const PoolMap = ({pools, selectedPool, setSelectedPool}) => {
+  const [center, setCenter] = useState([30.2669,-97.741])
+
+  useEffect(()=>{
+    if (selectedPool) {
+      setCenter([selectedPool.location_1.latitude, selectedPool.location_1.longitude])
+    }
+  }, [selectedPool])
+
   return (
     <div className="PoolMap-container">
-      <Map center={[30.2669,-97.741]} zoom={12}>
+      <Map center={center} zoom={12}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
