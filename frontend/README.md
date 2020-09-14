@@ -4,18 +4,16 @@
 
 Your task is to create a webpage that showcases all of the public pools in Austin. This data comes from our Open Data Portal: https://data.austintexas.gov/Recreation-and-Culture/Austin-Pool-Schedule/xaxa-886r
 
-### To get started:
-
-- Install dependencies: `yarn`
-- Run a local server: `yarn start`
-
-### Instructions
-
 When you first load up the coding challenge, it will contain boilerplate code that you need to finish. Here's what the finished product will look like:
 
 ![selected pool](documentation/selected.png)
 
----
+### Get started
+
+- Install dependencies: `yarn`
+- Run a local server: `yarn start`
+
+### Acceptance Criteria
 
 1. Create a list of pools on the lefthand Sidebar. Display the "name" of the pool on the right side of the row, and the "status" on the left side. When the cursor hovers over a row, make the cursor a "pointer" and give the row the color #00adff30.
 2. Place map markers for each pool.
@@ -64,8 +62,9 @@ When you first load up the coding challenge, it will contain boilerplate code th
 - Programmatically opening and closing the MapMarker Popups is the trickiest part of the challenge. I recommend trying the useRef() hook in order to access the openPopup and closePopup methods on the marker.
   - useRef docs: https://reactjs.org/docs/hooks-reference.html#useref
   - Leaflet docs: https://leafletjs.com/reference-1.7.1.html
-- Leaflet is a tiny bit glitchy, about 1/20 times it may not always center correctly on the right spot on the map. That's not on you to fix.
-- Don't spend more than an hour or two on the challenge.
+- The Leaflet library is a tiny bit glitchy, about 1/20 times it may not center correctly on the right spot on the map. That's not your responsibility to fix.
+- Don't spend more than 1-2 hours on the challenge.
+- Bonus points for deploying your solution.
 
 ### Resources
 
@@ -73,25 +72,8 @@ When you first load up the coding challenge, it will contain boilerplate code th
 - React Hooks: https://reactjs.org/docs/hooks-intro.html
 - React leaflet: https://react-leaflet.js.org/docs/en/examples
 - Leaflet: https://leafletjs.com/reference-1.7.1.html
-- Us. If you are stuck, or need guidance, leave a comment to a line of code in Github or email us.
+- Us. If you are stuck, or need guidance, send us an email.
 
-
-
-### Bonus
-
-If you attempt this part, don't spend longer on it than you think is necessary. There are many edge cases that can arise from this feature! You're not expected to untangle all of them. Go as far or short as you'd like, this is just for fun.
-
-Here's your bonus challenge: when you select a pool from the lefthand list, can you automatically zoom to that pool's location on the map and open its popup?
-
-To run methods directly on a Leaflet marker component, you'll have to utilize the useRef() hook. Your logic might look something like this:
-```
-const poolMarkerRef = useRef()
-useEffect((...) => {
-  if (...) {
-    poolMarkerRef.leafletElement.openPopup()
-  }
-}, [...])
-```
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

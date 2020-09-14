@@ -7,9 +7,6 @@
 .SelectedPool-container {
     background-color: #00adff4a;
     padding: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .SelectedPool-content {
@@ -25,23 +22,11 @@
 }
 
 .PoolSidebar-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 .PoolList-container {
-    overflow-y: scroll;
-    height: 100%;
 }
 
 .PoolListItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     padding: 10px 20px;
-    &:hover {
-        cursor: pointer;
-        background-color: #00adff30;
-    }
 }

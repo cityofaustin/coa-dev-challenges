@@ -33,14 +33,9 @@ const SelectedPoolTile = ({name, type, status, url}) => {
           Website: <a href="[insert url here]" target="_blank" rel="noopener noreferrer">[insert url here]</a>
         </div>
       </div>
-      <DeselectPoolButton/>
     </div>
   )
 }
-
-const DeselectPoolButton = () => (
-  <CloseIcon className="DeselectPoolButton" onClick={()=>{}}/>
-)
 
 const PoolListItem = ({name, status}) => {
   return (
