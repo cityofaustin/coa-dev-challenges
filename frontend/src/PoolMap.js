@@ -20,9 +20,9 @@ const PoolMap = () => {
 const PoolMapMarker = ({position, name}) => (
   <Marker
     position={position}
-    onClick={()=>console.log(`You clicked on ${name}`)}
+    onClick={()=>{}}
   >
-    <Popup>{name}</Popup>
+    <Popup onClose={()=>{}}>{name}</Popup>
   </Marker>
 )
 

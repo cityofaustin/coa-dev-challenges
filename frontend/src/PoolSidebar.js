@@ -6,7 +6,7 @@ import './PoolSidebar.scss';
 const PoolSidebar = () => {
   return (
     <div className="PoolSidebar-container">
-      <SelectedPool/>
+      <SelectedPoolTile/>
       <div className="PoolList-container">
         <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
         <PoolListItem name="[insert pool name here]" status="[insert status here]"/>
@@ -16,7 +16,7 @@ const PoolSidebar = () => {
   );
 }
 
-const SelectedPool = ({name, type, status, url}) => {
+const SelectedPoolTile = ({name, type, status, url}) => {
   return (
     <div className="SelectedPool-container">
       <div className="SelectedPool-content">
