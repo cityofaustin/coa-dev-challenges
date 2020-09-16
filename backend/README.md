@@ -8,7 +8,7 @@ To complete this challenge you'll need to learn about [GTFS (General Transit Fee
 
 For your convenience, we've checked in a [GTFS feed CapMetro published in June 2018](./gtfs-capmetro-june-2018). But, you can use [the latest GTFS feed from CapMetro](https://data.texas.gov/capital-metro) if you prefer.
 
-Your challenge will be to figure out how to query the `.txt` files in [`gtfs-capmetro-june-2018`](./gtfs-capmetro-june-2018) and then build an API that serves that data.
+Your challenge will be to figure out how to query the `.txt` files in [`gtfs-capmetro-june-2018`](./data) and then build an API that serves that data.
 
 You should be able to complete this challenge without using any transit specific libraries, but feel free to use one if you'd like. [awesome-transit](https://github.com/CUTR-at-USF/awesome-transit) is a community curated list of tools that can help you understand how to work with GTFS data.
 
