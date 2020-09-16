@@ -1,5 +1,7 @@
 # Backend Challenge
 
+### Challenge
+
 Your task is to create an API that serves Austin transit data. This is an open‐ended challenge, so feel free to show off your creativity.
 
 To complete this challenge you'll need to learn about [GTFS (General Transit Feed Specification)](https://developers.google.com/transit/gtfs/). A GTFS feed is a group of text files that contains infrequently changing transit data, like stops, routes, trips, and other schedule data. Transit agencies typically update their GTFS feed every few months.
@@ -9,6 +11,12 @@ For your convenience, we've checked in a [GTFS feed CapMetro published in June 2
 Your challenge will be to figure out how to query the `.txt` files in [`gtfs-capmetro-june-2018`](./gtfs-capmetro-june-2018) and then build an API that serves that data.
 
 You should be able to complete this challenge without using any transit specific libraries, but feel free to use one if you'd like. [awesome-transit](https://github.com/CUTR-at-USF/awesome-transit) is a community curated list of tools that can help you understand how to work with GTFS data.
+
+### Get started
+
+- Install dependencies with `pipenv install --dev`.
+- Run the app with `pipenv run python src/main.py`.
+- If you choose to use sqlite3, we have boilerplate code built out for you. Initialize your database by running `pipenv run python src/scripts/init_db.py`
 
 ## The API
 
