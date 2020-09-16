@@ -1,16 +1,11 @@
 import pytest
+import os
+import sqlite3
 
-from main import app
 
-@pytest.fixture
-def client():
-    db_fd, flaskr.app.config['DATABASE'] = tempfile.mkstemp()
-    app.config['TESTING'] = True
-
-    with app.test_client() as client:
-        with app.app_context():
-            flaskr.init_db()
-        yield client
-
-    os.close(db_fd)
-    os.unlink(flaskr.app.config['DATABASE'])
+@pytest.fixture(scope='function')
+def db(tmpdir):
+    file = os.path.join(tmpdir.strpath, "test.db")
+    conn = sqlite3.connect(file)
+    yield conn
+    conn.close()
