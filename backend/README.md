@@ -18,22 +18,18 @@ Our instructions are written using pipenv, but feel free to use whichever python
 
 - Install dependencies with `pipenv install --dev`.
 - Run the app with `pipenv run python src/main.py`.
-- Run tests with `pipenv run pytest`.
+- Run tests with `pipenv run pytest src/tests.py`.
 
 ## The API
 
-You're free to create your API queries using whatever method/database/library you prefer. We've hired developers who've solved this challenge multiple ways: via sqlite database or by parsing the txt files directly. We've included some boilerplate code for your convenience, feel free to use it or ignore it. Chose whichever method you're most comfortable with and will showcase your abilities at their best.
+You're free to create your API queries using whatever method/database/library you prefer. We've hired developers who've solved this challenge multiple ways: via sqlite database or by reading the txt files directly. We've included some boilerplate code for your convenience, feel free to use it or ignore it. Chose whichever method you're most comfortable with and will showcase your abilities at their best.
 
 Your API must provide a way to fetch the following data:
 
 - List the available routes. You can fetch this data by querying `routes.txt`.
 - List the trips for a specified route. You can fetch this data by querying `trips.txt`.
-- List the next five trips arriving at a particular stop. Specify the `stop_id` and `time`. You can fetch this data by querying `stops.txt`, `stop_times.txt`, and `trips.txt`.
-- In addition, please write tests for each endpoint. They don't need to be extensive, just check the basics. For example, does the routes query return more than 1 route?
-
-## Extra Credit
-- List the stops for a specified trip and direction. You can fetch this data by querying `trips.txt` and `stop_times.txt`.
-- List the routes that stop near a location. Specify the location using `latitude` and `longitude`. You can fetch this data by querying `stops.txt`, `stop_times.txt`, and `trips.txt`.
+- List the next five trips arriving at a particular stop. Specify the `stop_id` and `time`. You can fetch this data by querying `stop_times.txt` and `trips.txt`.
+- Please write tests for your endpoints. They don't need to be extensive, just check the basics. For example, does the routes query return more than 1 route?
 
 ## How to share
 
