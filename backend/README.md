@@ -39,9 +39,9 @@ Your API must provide a way to fetch the following data:
 ## Some Hints & Guidelines
 
 - You must work on this alone. Do not share the code challenge with others.
+- The challenge will take about 1-2 hours to complete.
 - Write clean code.
 - Build your API and queries using any frameworks, databases, tools, or libraries you like. We've hired developers who've solved this challenge multiple ways: via sqlite database or by parsing the txt files directly. We've included some boilerplate code for your convenience, feel free to use it or ignore it.
-- Don't spend more than 1-2 hours on the challenge.
 - Bonus points for deploying your API
 
 ## Resources

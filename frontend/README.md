@@ -56,6 +56,7 @@ When you first load up the coding challenge, it will contain boilerplate code th
 ### Hints & Guidelines
 
 - You must work on this alone. Do not share the code challenge with others.
+- The challenge will take about 1-2 hours to complete.
 - Write clean code.
 - Reorganize/rewrite any components or css as needed in order to complete the design requirements.
 - The boilerplate uses React Hooks. They are fairly new, so if you're unfamiliar with them you're welcome to use classic lifecycle methods instead (render, componentWillMount, etc). That being said, React Hooks doesn't take long to pick up and it makes a lot of that data lifecycle management easier. So it might be worthwhile to give it a try. :)
@@ -63,7 +64,6 @@ When you first load up the coding challenge, it will contain boilerplate code th
   - useRef docs: https://reactjs.org/docs/hooks-reference.html#useref
   - Leaflet docs: https://leafletjs.com/reference-1.7.1.html
 - The Leaflet library is a tiny bit glitchy, about 1/20 times it may not center correctly on the right spot on the map. That's not your responsibility to fix.
-- Don't spend more than 1-2 hours on the challenge.
 - Bonus points for deploying your solution.
 
 ### Resources
