@@ -2,26 +2,78 @@
 
 ### Challenge
 
-Your task is to create a webpage that displays information about the Most Dangerous Dogs in Austin. This is an open‐ended challenge, so feel free to show off your creativity. This data comes from our Open Data Portal. For documentation, visit: https://data.austintexas.gov/Public-Safety/Declared-Dangerous-Dogs/ykw4-j3aj
+Your task is to create a webpage that showcases all of the public pools in Austin. This data comes from our Open Data Portal: https://data.austintexas.gov/Recreation-and-Culture/Austin-Pool-Schedule/xaxa-886r
 
-### How does this work?
+When you first load up the coding challenge, it will contain boilerplate code that you need to finish. Here's what the finished product will look like:
 
-You have two paths to choose from. On our team, we've been using React and component based front end architecture. If you are comfortable with this paradigm, we encourage you to give the React exercise a try.
+![selected pool](documentation/selected.png)
 
-If you haven't used React yet, no worries. We also have an alternative setup that is agnostic. No previous experience with any modern frameworks is required. We are looking for someone who can learn, adapt, and teach on the fly and project to project.
+### Get started
 
-- [React version](./react)
-- [Agnostic version](./agnostic)
+- Install dependencies: `yarn`
+- Run a local server: `yarn start`
+
+### Acceptance Criteria
+
+1. Create a list of pools on the lefthand Sidebar. Display the "name" of the pool on the right side of the row, and the "status" on the left side. When the cursor hovers over a row, make the cursor a "pointer" and give the row the color #00adff30.
+2. Place map markers for each pool.
+
+![unselected pool](documentation/unselected.png)
+
+---
+
+3. Allow a user to select a pool from the list. When a pool is selected:
+   - Render a SelectedPoolTile above the PoolList.
+   - Center the Map over the selectedPool.
+   - Render a Popup on the map with the pool's name.
+
+![select from list](documentation/select_from_list.gif)
+
+---
+
+4. Allow users to also select a pool by clicking a map marker.
+
+![select from map](documentation/select_from_map.gif)
+
+---
+
+5. The list of pools should overflow-scroll within the sidebar.
+
+![unselected pool](documentation/overflow_scroll.gif)
+
+---
+
+6. Add the CloseIcon to the top right side of the SelectedPoolTile. When its clicked, the pool is de-selected and the map marker popup closes.
+
+![close from selected pool tile](documentation/close_from_selected.gif)
+
+---
+
+7. When the map marker popup for a pool is closed, then also close the SelectedPoolTile.
+
+![close from map](documentation/close_from_map.gif)
+
+### Hints & Guidelines
+
+- You must work on this alone. Do not share the code challenge with others.
+- The challenge will take about 1-2 hours to complete.
+- Write clean code.
+- Reorganize/rewrite any components or css as needed in order to complete the design requirements.
+- The boilerplate uses React Hooks. They are fairly new, so if you're unfamiliar with them you're welcome to use classic lifecycle methods instead (render, componentWillMount, etc). That being said, React Hooks doesn't take long to pick up and it makes a lot of that data lifecycle management easier. So it might be worthwhile to give it a try. :)
+- Programmatically opening and closing the MapMarker Popups is the trickiest part of the challenge. I recommend trying the useRef() hook in order to access the openPopup and closePopup methods on the marker.
+  - useRef docs: https://reactjs.org/docs/hooks-reference.html#useref
+  - Leaflet docs: https://leafletjs.com/reference-1.7.1.html
+- The Leaflet library is a tiny bit glitchy, about 1/20 times it may not center correctly on the right spot on the map. That's not your responsibility to fix.
+- Bonus points for deploying your solution.
 
 ### Resources
 
-- Endpoint to data: https://data.austintexas.gov/Public-Safety/Declared-Dangerous-Dogs/ykw4-j3aj
-- SODA Developers Documentation: http://dev.socrata.com/
-- Us. If you are stuck, or need guidance, leave a comment to a line of code in Github or email us.
+- Endpoint to data: https://data.austintexas.gov/Recreation-and-Culture/Austin-Pool-Schedule/xaxa-886r
+- React Hooks: https://reactjs.org/docs/hooks-intro.html
+- React leaflet: https://react-leaflet.js.org/docs/en/examples
+- Leaflet: https://leafletjs.com/reference-1.7.1.html
+- Us. If you are stuck, or need guidance, send us an email.
 
-### Some Hints & Guidelines
+---
 
-- You are welcome to use any JavaScript or styling frameworks you want.
-- Make it responsive ‐ this should display well on mobile too.
-- Write clean code. Bonus points for tests.
-- You must work on this alone. Do not share the code challenge with others.
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

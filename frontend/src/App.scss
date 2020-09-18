@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+$border-height: 10vh;
+
+.App-border {
+    background-color: #2f73d4;
+    position: absolute;
+    box-sizing: border-box;
+    height: $border-height;
+    padding: 20px;
+    left: 0;
+    right: 0;
+}
+
+.App-header {
+    @extend .App-border;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+    }
+}
+
+.App-footer {
+    @extend .App-border;
+    bottom: 0;
+}
+
+.App-content {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: $border-height;
+    bottom: $border-height;
+    display: flex;
+    flex-direction: row;
+}
+
+.App-content-column {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.App-intro {
+  font-size: large;
+}

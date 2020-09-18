@@ -1,0 +1,32 @@
+.DeselectPoolButton {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.SelectedPool-container {
+    background-color: #00adff4a;
+    padding: 25px;
+}
+
+.SelectedPool-content {
+    text-align: left;
+}
+
+.SelectedPool-name {
+    font-size: 2.5em;
+}
+
+.SelectedPool-data {
+    line-height: 1.5em;
+}
+
+.PoolSidebar-container {
+}
+
+.PoolList-container {
+}
+
+.PoolListItem {
+    padding: 10px 20px;
+}

@@ -1,0 +1,14 @@
+.PoolMap-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+// This class is used within leaflet Map component
+.leaflet-container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50vw; // if you use width: 100%, leaflet won't calculate the initial center correctly
+}
